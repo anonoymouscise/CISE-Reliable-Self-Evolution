@@ -1,0 +1,35 @@
+{
+  "method": "cci",
+  "output_dir": "../runs/cci_100",
+  "tasks": [
+    "wbg",
+    "sse",
+    "pv"
+  ],
+  "iterations": 100,
+  "parallel_tasks": 3,
+  "surrogates": {
+    "mgt_python": "python",
+    "alignn_python": "python",
+    "mgt_bundle": "../assets/mgt",
+    "alignn_root": "../assets/alignn",
+    "device": "cuda:0"
+  },
+  "cci": {
+    "probe_min_valid": 8,
+    "admission_min_valid": 2,
+    "calibration_dir": "../assets/calibration",
+    "engine": "gibbs",
+    "alpha_total": 0.1,
+    "quantile_offset": false,
+    "max_attempts": 3
+  },
+  "qe": {
+    "enabled": false,
+    "python": "python",
+    "protocol": "qetb_pbesol",
+    "pseudo_dir": "../assets/gbrv_pbesol",
+    "reference_file": "../assets/qe/source_reference_constants.json",
+    "smoke_evidence": "../assets/qe/source_smoke_evidence.json"
+  }
+}

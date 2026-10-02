@@ -1,0 +1,26 @@
+{
+  "method": "llema",
+  "output_dir": "../runs/llema_100",
+  "tasks": [
+    "wbg",
+    "sse",
+    "pv"
+  ],
+  "iterations": 100,
+  "parallel_tasks": 3,
+  "surrogates": {
+    "mgt_python": "python",
+    "alignn_python": "python",
+    "mgt_bundle": "../assets/mgt",
+    "alignn_root": "../assets/alignn",
+    "device": "cuda:0"
+  },
+  "qe": {
+    "enabled": false,
+    "python": "python",
+    "protocol": "qetb_pbesol",
+    "pseudo_dir": "../assets/gbrv_pbesol",
+    "reference_file": "../assets/qe/source_reference_constants.json",
+    "smoke_evidence": "../assets/qe/source_smoke_evidence.json"
+  }
+}
